@@ -40,7 +40,7 @@ export default function App() {
           keyExtractor={item => item.id}
           data={todos}
           renderItem={({item}) => (<Todo key={item.id} todo={item}/>)}
-
+          style={styles.list}
         />
       </View>
     </View>
@@ -50,10 +50,12 @@ export default function App() {
 const styles = StyleSheet.create({
   background: {
     flex: 1,
-    backgroundColor: 'grey'
   },
   container: {
+    flax: 1,
     paddingHorizontal: 30,
     paddingVertical: 20
   },
+  list: {
+  }
 });
