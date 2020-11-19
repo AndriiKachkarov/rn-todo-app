@@ -20,6 +20,8 @@ export const AddTodo = ({onSubmit}) => {
         onChangeText={setValue}
         value={value}
         placeholder='Enter todos name...'
+        autoCorrect={false}
+        autoCapitalize='none'
       />
       <Button
         title='Add'
