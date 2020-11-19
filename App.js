@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, ScrollView, FlatList} from 'react-native';
 import {Navbar} from "./src/Navbar";
 import {AddTodo} from "./src/AddTodo";
 import {Todo} from "./src/Todo";
@@ -33,17 +33,16 @@ export default function App() {
       <Navbar
         title='Todo App'
       />
-      <ScrollView style={styles.container}>
-        <AddTodo
-          onSubmit={addTodo}
-        />
+      <View style={styles.container}>
+        <AddTodo onSubmit={addTodo}/>
 
-        <View>
-          {todos.map(todo => (
-            <Todo key={todo.id} todo={todo}/>
-          ))}
-        </View>
-      </ScrollView>
+        <FlatList
+          keyExtractor={item => item.id}
+          data={todos}
+          renderItem={({item}) => (<Todo key={item.id} todo={item}/>)}
+
+        />
+      </View>
     </View>
   );
 }
