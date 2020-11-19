@@ -20,10 +20,10 @@ export const AddTodo = ({onSubmit}) => {
 
 const styles = StyleSheet.create({
   block: {
-    // backgroundColor: '#3f2a89',
     flexDirection: 'row',
     justifyContent: 'space-between',
-    alignItems: 'center'
+    alignItems: 'center',
+    marginBottom: 15
   },
   input: {
     width: '70%',
