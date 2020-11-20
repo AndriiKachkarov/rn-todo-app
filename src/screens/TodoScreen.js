@@ -3,11 +3,31 @@ import {StyleSheet, View, Text, Button,} from 'react-native';
 
 export const TodoScreen = ({todo, goBack}) => {
     return (
-        <View>
+        <View style={styles.container}>
             <Text>{todo.title}</Text>
-            <Button title='Back' onPress={goBack}/>
+            <View style={styles.buttons}>
+                <View style={styles.button}>
+                    <Button title='Back' color='#757575' onPress={goBack}/>
+                </View>
+                <View style={styles.button}>
+                    <Button title='Delete' color='#e53935' onPress={() => console.log('remove')}/>
+                </View>
+            </View>
         </View>
     )
 };
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        paddingHorizontal: 30,
+        paddingVertical: 20
+    },
+    buttons: {
+        flexDirection: 'row',
+        justifyContent: 'space-between'
+    },
+    button: {
+        width: '45%'
+    }
+});
