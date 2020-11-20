@@ -40,15 +40,32 @@ export default function App() {
         );
     };
 
+    const updateTodo = (id, title) => {
+        setTodos(old => old.map(todo => {
+            if (todo.id === id) {
+                todo.title = title;
+            }
+            return todo;
+        }))
+    };
+
     let content = (<MainScreen
         addTodo={addTodo}
         removeTodo={removeTodo}
         todos={todos}
-        openTodo={(id) => {setTodoId(id)}}
+        openTodo={(id) => {
+            setTodoId(id)
+        }}
     />);
 
     if (todoId) {
-      content = (<TodoScreen onRemove={removeTodo} todo={todos.find(todo => todo.id === todoId)} goBack={() => setTodoId(null)}/>);
+        content = (<TodoScreen
+                onRemove={removeTodo}
+                todo={todos.find(todo => todo.id === todoId)}
+                goBack={() => setTodoId(null)}
+                onSave={updateTodo}
+        />
+        );
     }
 
     return (
@@ -56,7 +73,7 @@ export default function App() {
             <Navbar
                 title='Todo App'
             />
-          {content}
+            {content}
         </View>
     );
 }
