@@ -49,7 +49,7 @@ export const TodoScreen = ({todo, goBack, onRemove, onSave}) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        paddingHorizontal: 30,
+        paddingHorizontal: THEME.PADDING_HORIZONTAL,
         paddingVertical: 20
     },
     buttons: {
