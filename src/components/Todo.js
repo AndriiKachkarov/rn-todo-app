@@ -14,7 +14,6 @@ export const Todo = ({todo, onRemove, onOpen}) => {
         <AppText >{todo.title}</AppText>
       </View>
     </TouchableOpacity>
-
   )
 };
 

@@ -15,6 +15,11 @@ export const EditModal = ({value, visible, onCancel, onSave}) => {
         } else {
             onSave(title)
         }
+    };
+
+    const cancelHandler = () => {
+        setTitle(value);
+        onCancel();
     }
 
     return (
@@ -30,7 +35,7 @@ export const EditModal = ({value, visible, onCancel, onSave}) => {
                     maxLength={64}
                 />
                 <View style={styles.buttons}>
-                    <AppButton onPress={onCancel} color={THEME.DANGER_COLOR}>Cancel</AppButton>
+                    <AppButton onPress={cancelHandler} color={THEME.DANGER_COLOR}>Cancel</AppButton>
                     <AppButton onPress={saveHandler}>Save</AppButton>
                 </View>
             </View>
