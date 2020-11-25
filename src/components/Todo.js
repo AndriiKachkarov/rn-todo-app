@@ -3,6 +3,7 @@ import {View, StyleSheet, TouchableOpacity} from "react-native";
 import {AppText} from "./ui/AppText";
 
 export const Todo = ({todo, onRemove, onOpen}) => {
+  console.log(todo);
 
   return (
     <TouchableOpacity
